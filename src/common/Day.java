@@ -9,12 +9,10 @@ import java.util.Scanner;
  *
  * @author permi
  */
-public class Day {
+public abstract class Day {
 
     protected String input;
     private static final String DIR = "input/";
-
-    public static final int USE_DEBUG_FILE = 0;
 
     public enum FileType {
         Input,
@@ -29,7 +27,13 @@ public class Day {
         readInput(type);
     }
 
+    /**
+     * Reads the input file for the given advent day challenge.
+     * @param type If set to <code>FileType.Debug</code>, uses an alternative
+     * input file that can be customized by the user, to make debugging easier.
+     */
     public void readInput(FileType type) {
+        // Retrieve the day from the class name.
         int day = Integer.parseInt(getClass().getSimpleName().substring(3, getClass().getSimpleName().length()));
         System.out.println("================================ Solution to day " + day + " ================================");
         input = "";
