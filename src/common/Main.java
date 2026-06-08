@@ -10,7 +10,7 @@ public class Main {
 
     public static final int ADVENT_YEAR = 2015; // https://adventofcode.com/2015
     public static final int CURRENT_DAY = 9;
-    public static final boolean EXECUTE_ONLY_LAST_DAY = false;
+    public static final boolean EXECUTE_ONLY_LAST_DAY = true;
 
     /**
      * Using reflection, dynamically create an instance of the advent day
