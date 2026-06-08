@@ -1,4 +1,4 @@
-package aoc2015;
+package day7;
 
 import common.Day;
 import java.util.HashMap;
@@ -11,6 +11,11 @@ import java.util.Map;
 public class Day7 extends Day {
 
     private Map<String, Integer> wireMap = new HashMap<>();
+    
+    private enum Direction {
+        Left,
+        Right
+    }
 
     public Day7() {
         super(FileType.Input);
@@ -113,10 +118,7 @@ public class Day7 extends Day {
         }
     }
 
-    private enum Direction {
-        Left,
-        Right
-    }
+    
 
     /**
      * Examples of commands: cd LSHIFT 15 -> ch | x RSHIFT 5 -> aa
@@ -164,9 +166,6 @@ public class Day7 extends Day {
             // Skip command
             return false;
         }
-    }
-
-    private class WireWithoutSignalException extends Exception {
     }
 
     private int getTokenValue(String token) throws WireWithoutSignalException {

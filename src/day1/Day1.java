@@ -1,4 +1,4 @@
-package aoc2015;
+package day1;
 
 import common.Day;
 

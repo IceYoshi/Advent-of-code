@@ -1,7 +1,4 @@
-package aoc2015;
-
-import common.Day;
-
+package common;
 
 /**
  *

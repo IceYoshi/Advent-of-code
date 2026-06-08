@@ -9,8 +9,8 @@ import java.lang.reflect.InvocationTargetException;
 public class Main {
 
     public static final int ADVENT_YEAR = 2015; // https://adventofcode.com/2015
-    public static final int CURRENT_DAY = 8;
-    public static final boolean EXECUTE_ONLY_LAST_DAY = true;
+    public static final int CURRENT_DAY = 9;
+    public static final boolean EXECUTE_ONLY_LAST_DAY = false;
 
     /**
      * Using reflection, dynamically create an instance of the advent day
@@ -27,7 +27,7 @@ public class Main {
                 String className = "Day" + i;
 
                 long startTime = System.nanoTime();
-                Class.forName("aoc" + ADVENT_YEAR + "." + className).getDeclaredConstructor().newInstance();
+                Class.forName("day" + i + "." + className).getDeclaredConstructor().newInstance();
                 long executionTime = (System.nanoTime() - startTime) / 1_000_000;
 
                 System.out.println("Execution time: " + executionTime + "ms");

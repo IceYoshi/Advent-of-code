@@ -1,4 +1,4 @@
-package aoc2015;
+package day6;
 
 import common.Day;
 import java.awt.Point;
@@ -10,9 +10,9 @@ import java.awt.Point;
  */
 public class Day6 extends Day {
 
-    public static final int SIZE = 1000;
-    private boolean lightArray[][] = new boolean[SIZE][SIZE]; // Off by default
-    private int dimmableLightArray[][] = new int[SIZE][SIZE]; // 0 by default
+    public static final int GRID_SIZE = 1000;
+    private boolean lightArray[][] = new boolean[GRID_SIZE][GRID_SIZE]; // Off by default
+    private int dimmableLightArray[][] = new int[GRID_SIZE][GRID_SIZE]; // 0 by default
     
     public Day6() {
         super(FileType.Input);
@@ -91,8 +91,8 @@ public class Day6 extends Day {
     
     private int getNumberOfLitLights() {
         int counter = 0;
-        for(int x = 0; x < SIZE; x++) {
-            for(int y = 0; y < SIZE; y++) {
+        for(int x = 0; x < GRID_SIZE; x++) {
+            for(int y = 0; y < GRID_SIZE; y++) {
                 if(lightArray[x][y]) counter++;
             }
         }
@@ -101,8 +101,8 @@ public class Day6 extends Day {
     
     private int getTotalBrightness() {
         int counter = 0;
-        for(int x = 0; x < SIZE; x++) {
-            for(int y = 0; y < SIZE; y++) {
+        for(int x = 0; x < GRID_SIZE; x++) {
+            for(int y = 0; y < GRID_SIZE; y++) {
                 counter += dimmableLightArray[x][y];
             }
         }
