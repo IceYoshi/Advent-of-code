@@ -185,6 +185,7 @@ public class Day7 extends Day {
         }
     }
 
+    @SuppressWarnings("unused")
     private void printWireMap() {
         System.out.println("==== WireMap ====");
         wireMap.forEach((key, value) -> {

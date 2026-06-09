@@ -8,6 +8,7 @@ import common.*;
  */
 public class Day12 extends Day {
 
+    @SuppressWarnings("ResultOfObjectAllocationIgnored")
     public Day12() {
         super(FileType.Input);
         

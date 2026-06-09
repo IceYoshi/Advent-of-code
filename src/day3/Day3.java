@@ -69,6 +69,8 @@ public class Day3 extends Day {
         activePlayer = PlayerType.values()[(activePlayer.ordinal() + 1) % PlayerType.values().length];
     }
 
+    
+    @SuppressWarnings("unused")
     private void printSet() {
         for (Point p : positionsVisited) {
             System.out.println("(" + p.x + ", " + p.y + ")");

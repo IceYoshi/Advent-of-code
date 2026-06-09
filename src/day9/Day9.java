@@ -7,6 +7,7 @@ import common.Day;
  *
  * @author permi
  */
+@SuppressWarnings("ResultOfObjectAllocationIgnored")
 public class Day9 extends Day {
 
     public Day9() {

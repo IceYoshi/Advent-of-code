@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class JsonObject extends JsonAny {
 
-    public final Map<String, JsonAny> value = new HashMap();
+    public final Map<String, JsonAny> value = new HashMap<>();
 
     public JsonObject() {
         super(Type.Object);
