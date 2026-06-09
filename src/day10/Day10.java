@@ -9,16 +9,11 @@ import common.*;
  * 5 million digits. Since the char data type in Java represents a 2-byte Unicode character, the result 
  * string takes about 10 MB memory to store.
  * 
- * After running the test for 50 iterations, we ended up with almost 7 million digits and it took 50 minutes to compute.
- * 
- * Considering that the string for this sequence only consists of digits from 0 to 9, one could try to 
- * store them in a more efficient way to save memory and perhaps also computational time.
- * 
  * @author permi
  */
 public class Day10 extends Day {
 
-    public static final int ITERATION_NUMBER = 40;
+    public static final int ITERATION_NUMBER = 50;
 
     public Day10() {
         super(FileType.Input);
@@ -35,7 +30,7 @@ public class Day10 extends Day {
     }
 
     private String getLookAndSay(String input) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         int i = 0;
         while(i < input.length()) {
             char digit = input.charAt(i);
@@ -48,10 +43,11 @@ public class Day10 extends Day {
             // Contrary to String, the + operator of char does not concatenate but 
             // rather adds up the values of chars. We force therefore an implicit String 
             // cast using an empty string to avoid this problem.
-            result += digitCount + "" + digit;
+            result.append(digitCount);
+            result.append(digit);
         }
 
-        return result;
+        return result.toString();
     }
 
 }
