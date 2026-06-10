@@ -1,4 +1,4 @@
-package day12.json;
+package common.json;
 
 import java.util.HashMap;
 import java.util.Map;

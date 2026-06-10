@@ -1,12 +1,12 @@
 package day12;
 
-import day12.json.JSON;
-import day12.json.JsonAny;
-import day12.json.JsonArray;
-import day12.json.JsonNumber;
-import day12.json.JsonObject;
-import day12.json.JsonString;
-import day12.json.JsonAny.Type;
+import common.json.JSON;
+import common.json.JsonAny;
+import common.json.JsonArray;
+import common.json.JsonNumber;
+import common.json.JsonObject;
+import common.json.JsonString;
+import common.json.JsonAny.Type;
 
 /**
  *

@@ -1,28 +1,25 @@
 package day9;
 
+import common.PermutationList;
 import java.util.ArrayList;
 
 /**
  * Second attempt at this challenge. This time, we'll generate all possible
  * permutations of paths that visit every location and keep track of the
- * shortest
- * total distance. Since there might not be a connection between any two
- * distinct
- * locations, we will be able to skip over those impossible permutations.
- * 
- * For n locations, there is a total of n! permutations. For n=8, that gives
- * us a total of 40320 paths to check.
- * 
+ * shortest total distance. Since there might not be a connection between any
+ * two distinct locations, we will be able to skip over those impossible
+ * permutations.
+ *
+ * For n locations, there is a total of n! permutations. For n=8, that gives us
+ * a total of 40320 paths to check.
+ *
  * @author permi
  */
 public class Day9b {
 
-    private ArrayList<String> locations = new ArrayList<>();
-    private ArrayList<Connection> connections = new ArrayList<>();
+    private final PermutationList<String> locations = new PermutationList<>();
+    private final ArrayList<Connection> connections = new ArrayList<>();
 
-    // Used to store permutations
-    private ArrayList<String> poolOfAvailableLocatons;
-    private ArrayList<String> currentPermutation;
     private int shortestDistance = -1;
     private int longestDistance = -1;
 
@@ -60,28 +57,18 @@ public class Day9b {
     }
 
     private void addIfAbsent(String location) {
-        if (!locations.contains(location))
+        if (!locations.contains(location)) {
             locations.add(location);
+        }
     }
 
     /**
-     * Goes through all permutations of the locations and finds the shortest and longest route.
-     * For n locations, we first have n locations to choose from. After that, this method calls
-     * itself recursively, where it has n-1 locations to choose from. This goes down to 0, where
-     * finally the permutation list is finished and the distance can be calculated.
+     * Goes through all permutations of the locations and finds the shortest and
+     * longest route.
      */
     private void calculateAllRouteDistances() {
-        if (poolOfAvailableLocatons == null) {
-            // Add all locations to the pool
-            poolOfAvailableLocatons = new ArrayList<>();
-            for (String location : locations) {
-                poolOfAvailableLocatons.add(location);
-            }
-            currentPermutation = new ArrayList<>();
-        }
-
-        if (poolOfAvailableLocatons.isEmpty()) {
-            int currentTraversalDistance = getPermutationRouteDistance();
+        locations.forEachPermutation((currentPermutation) -> {
+            int currentTraversalDistance = getPermutationRouteDistance(currentPermutation);
 
             if (currentTraversalDistance > 0) {
 
@@ -98,33 +85,19 @@ public class Day9b {
                 }
 
             }
-
-        }
-
-        for (int i = 0; i < poolOfAvailableLocatons.size(); i++) {
-            String location = poolOfAvailableLocatons.remove(i);
-            currentPermutation.add(location);
-            calculateAllRouteDistances();
-            // Insert location back into its previous position
-            poolOfAvailableLocatons.add(i, location);
-        }
-
-        if (!currentPermutation.isEmpty()) {
-            currentPermutation.removeLast();
-        }
+        });
     }
 
     /**
      * Travels from location to location in the order that they appear in the
      * current permutation ArrayList and sums up the distances.
-     * 
+     *
      * @return The total distance from the first to the last location, while
-     *         traversing all locations in between.
-     *         Returns -1 if no connection was found between two adjacent locations
-     *         to show that the distance is invalid and shall not be taken into
-     *         account.
+     * traversing all locations in between. Returns -1 if no connection was
+     * found between two adjacent locations to show that the distance is invalid
+     * and shall not be taken into account.
      */
-    private int getPermutationRouteDistance() {
+    private int getPermutationRouteDistance(ArrayList<String> currentPermutation) {
         numberOfEvaluatedRoutes++;
         int totalDistance = 0;
         for (int i = 0; i < currentPermutation.size() - 1; i++) {

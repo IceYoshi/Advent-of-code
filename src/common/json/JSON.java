@@ -1,4 +1,4 @@
-package day12.json;
+package common.json;
 
 /**
  * Any: Numerical, String, Boolean, Null, Array, Object

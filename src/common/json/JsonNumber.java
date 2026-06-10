@@ -1,5 +1,5 @@
 
-package day12.json;
+package common.json;
 
 /**
  *
