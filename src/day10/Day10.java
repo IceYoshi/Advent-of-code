@@ -40,9 +40,6 @@ public class Day10 extends Day {
                 digitCount++;
                 i++;
             }
-            // Contrary to String, the + operator of char does not concatenate but 
-            // rather adds up the values of chars. We force therefore an implicit String 
-            // cast using an empty string to avoid this problem.
             result.append(digitCount);
             result.append(digit);
         }

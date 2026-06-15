@@ -1,4 +1,4 @@
-package day5.rules;
+package day05;
 
 import java.util.ArrayList;
 

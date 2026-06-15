@@ -1,6 +1,5 @@
 package common;
 
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -22,13 +21,14 @@ public abstract class Day {
     public Day() {
         readInput(FileType.Input);
     }
-    
+
     public Day(FileType type) {
         readInput(type);
     }
 
     /**
      * Reads the input file for the given advent day challenge.
+     *
      * @param type If set to <code>FileType.Debug</code>, uses an alternative
      * input file that can be customized by the user, to make debugging easier.
      */
@@ -41,7 +41,7 @@ public abstract class Day {
         File inputFile;
         switch (type) {
             case Input ->
-                inputFile = new File(DIR + day + ".txt");
+                inputFile = new File(DIR + ((day < 10) ? "0" : "") + day + ".txt");
             case Debug ->
                 inputFile = new File(DIR + "debug.txt");
             default -> {

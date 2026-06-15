@@ -1,4 +1,4 @@
-package day6;
+package day06;
 
 import common.Day;
 import java.awt.Point;

@@ -1,11 +1,5 @@
-package day5;
+package day05;
 
-import day5.rules.DuplicateLetterRule;
-import day5.rules.DuplicatePairRule;
-import day5.rules.DuplicateLetterWithGapRule;
-import day5.rules.ExclusionRule;
-import day5.rules.VowelRule;
-import day5.rules.Rule;
 import common.Day;
 
 /**
