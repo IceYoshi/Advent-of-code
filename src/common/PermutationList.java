@@ -2,7 +2,7 @@ package common;
 
 import java.util.ArrayList;
 
-/**
+/*
  * Allows the generation of all possible permutations of the list.
  *
  * @author permi
@@ -35,11 +35,11 @@ public class PermutationList<T> extends ArrayList<T> {
         }
 
         for (int i = 0; i < poolOfValues.size(); i++) {
-            T location = poolOfValues.remove(i);
-            currentPermutation.add(location);
+            T value = poolOfValues.remove(i);
+            currentPermutation.add(value);
             forEachPermutation(action);
             // Insert value back into its previous position
-            poolOfValues.add(i, location);
+            poolOfValues.add(i, value);
         }
 
         if (!currentPermutation.isEmpty()) {
