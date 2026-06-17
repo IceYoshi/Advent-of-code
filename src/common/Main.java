@@ -9,7 +9,7 @@ import java.lang.reflect.InvocationTargetException;
 public class Main {
 
     public static final int ADVENT_YEAR = 2015; // https://adventofcode.com/2015
-    public static final int CURRENT_DAY = 18;
+    public static final int CURRENT_DAY = 19;
     public static final boolean EXECUTE_ONLY_LAST_DAY = true;
 
     /*
